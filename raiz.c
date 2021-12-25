@@ -30,6 +30,8 @@ Vamos a hacer lo siguiente hasta que el array de pares este vacio, es decir, est
 
 // Divide un numero en pareja de dos digitos y los guarda en un array
 
+
+//Calcula si las cifras del numero es par o no
 int es_par(int numero){
 
   int cont=0;
@@ -48,6 +50,8 @@ int es_par(int numero){
     }
 }
 
+
+//Concatena dos numeros 
 unsigned concatenate(unsigned x, unsigned y) {
     unsigned pow = 10;
     while(y >= pow)
@@ -55,7 +59,7 @@ unsigned concatenate(unsigned x, unsigned y) {
     return x * pow + y;        
 }
 
-//Calcula en cuantas parejas de dos se tiene que dividir el numero
+//Calcula en cuantas parejas de dos se tiene que dividir el numero y en caso de que sea impar el numero de digitos el ultimo que se guarda solo es 1 digito 
 int calculo_array(int numero)
 {
     int numero_parejas=0;
@@ -70,6 +74,7 @@ int calculo_array(int numero)
             printf ("\n--%d--\n",es_par(numero) );
             */
             
+            //Si el numero de cifras dividido entre 100 quiere decir que es el ultimo numero y si tambien es inpar se hace que el ultimo numero solo sea una cifra
             if((numero/100)<0 && numero_par==FALSE)
      
             {
@@ -104,8 +109,10 @@ int dividir_parejas(int numero, int *numero_array,int tamano_array){
             printf ("\n--%d--\n",es_par(numero) );
             */
             
+            
+            //Si el numero de cifras dividido entre 100 quiere decir que es el ultimo numero y si tambien es inpar se hace que el ultimo numero solo sea una cifra
+
             if((numero/100)<0 && numero_par==FALSE)
-     
             {
 
                 array_aux[numero_parejas] = numero % 10;
@@ -128,6 +135,8 @@ int dividir_parejas(int numero, int *numero_array,int tamano_array){
     return numero_parejas;
 }
 
+
+//Busca el numero mas cercano que multiplicado por si mismo de ese otro numero
 int busca_cercano(int numero){
     int i;
     for(i=0; i<numero; i++){
@@ -197,11 +206,6 @@ int calcula_raiz(int numero, int *numero_array, int *resto, int *solucion, int t
         (*solucion) = concatenate( (*solucion), n);                          //7
         // Le restamos al resto doble_solucion concatenado con n x n
         (*resto) = (*resto) - (concatenate(doble_solucion, n)*n);                    
-
-
-        
-
-        
 
 
 
